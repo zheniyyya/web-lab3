@@ -1,0 +1,64 @@
+.overlay-info {
+    border:0;
+    padding: 0;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100px;
+    height: 40px;
+    overflow: hidden;
+    background-color: #AF01DA;
+    color:white;
+    transition: all 1s ease;
+    margin-left: 50px;
+    border-radius: 10px 10px 0 0;
+    display: block;
+}
+
+.buylist{
+    align-items: center;
+    font-size: 20px;
+    display: flex;
+    justify-content: center;
+    color:white;
+    height:40px;
+    margin:auto;
+}
+.created_by_text{
+    margin:0;
+    height: 15px;
+    font-size: 10px;
+    display: flex;
+    text-indent: 6px;
+}
+.authorName{
+    text-indent: 6px;
+    text-align: left;
+    display: flex;
+    margin:0;
+    height:20px;
+    font-size: 15px;
+}
+.overlay-info:hover{
+    height: 105px;
+    background-color: #4D01DA;
+}
+
+
+@media print {
+    * {
+        -webkit-print-color-adjust: exact; /* Chrome, Safari */
+    }
+    .overlay-info{
+        background-color: white;
+        border: 3px solid #AF01DA;
+        height: 85px;
+    }
+    .overlay-info .created_by_text, .overlay-info .authorName{
+        color:black;
+    }
+    .overlay-info .buylist{
+        visibility: hidden;
+        position:absolute;
+    }
+}

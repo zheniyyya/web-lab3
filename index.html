@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Кошик покупок</title>
+    <link rel="stylesheet" type="text/css" href="base.css"/>
+    <link rel="stylesheet" type="text/css" href="form.css" />
+    <link rel="stylesheet" type="text/css" href="item-list.css" />
+    <link rel="stylesheet" type="text/css" href="overview-panel.css" />
+    <link rel="stylesheet" type="text/css" href="badge.css" />
+
+
+
+
+</head>
+<body>
+<div class="item_container">
+    <form class="add_item_form">
+        <input type="text" class="input" placeholder="Назва товару" />
+        <button type="submit" class="adding" data-tooltip="Додайте товар">Додати</button>
+    </form>
+
+
+    <section class="first-item">
+        <div class="item_name" contenteditable="false">
+            <p>
+                Помідори
+            </p>
+        </div>
+        <div class="amount_control">
+            <button class="minus" data-tooltip="Зменшити">-</button>
+            <button class="count_value">2</button>
+            <button class="plus" data-tooltip="Збільшити">+</button>
+        </div>
+        <div class="state_indicator">
+            <button class="bought" >Не куплено </button>
+            <button class="cancel" data-tooltip="Видалити">x</button>
+        </div>
+    </section>
+
+    <section class="second-item">
+        <div class="item_name" contenteditable="true">
+            <p >
+                Печиво
+            </p>
+        </div>
+        <div class="amount_control">
+            <button class="minus" data-tooltip="Зменшити">-</button>
+            <button class="count_value">2</button>
+            <button class="plus" data-tooltip="Збільшити">+</button>
+        </div>
+        <div class="state_indicator">
+            <button class="bought" >Куплено</button>
+            <button class="cancel" data-tooltip="Видалити">x</button>
+        </div>
+    </section>
+
+    <section class="third-item">
+        <div class="item_name" contenteditable="true">
+            <p >Сир</p>
+        </div>
+        <div class="amount_control">
+            <button class="minus" data-tooltip="Зменшити">-</button>
+            <button class="count_value">1</button>
+            <button class="plus" data-tooltip="Збільшити">+</button>
+        </div>
+        <div class="state_indicator">
+            <button class="bought">Куплено</button>
+            <button class="cancel" data-tooltip="Видалити">x</button>
+        </div>
+    </section>
+
+
+</div>
+<br/>
+
+<section class="overview_panel">
+    <b class="category_title">
+        Залишилося
+    </b>
+    <div class="available_items">
+	<span class="display_item">
+		Печиво
+		<span class="amount">2</span>
+	</span>
+        <span class="display_item">
+		Сир
+		<span class="amount">1</span>
+	</span>
+    </div>
+    <b class="category_title">
+        Куплено
+    </b>
+    <div class="acquired_item">
+	<span class="display_item">
+		Помідори
+		<span class="amount">2</span>
+	</span>
+    </div>
+</section>
+
+<button class="overlay-info">
+    <b class="buylist">Buy List</b>
+    <p class="created_by_text">Created by:</p>
+    <b class="authorName">Yevhenia</b>
+    <b class="authorName">Kravchenko</b>
+</button>
+
+
+</body>
+</html>

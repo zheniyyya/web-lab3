@@ -1,0 +1,158 @@
+.amount_control, .state_indicator, .item_name{
+    width: 33%;
+    height: 65%;
+    display: flex;
+    justify-content: right;
+    align-items: center;
+}
+.state_indicator{
+    margin-right: 1%;
+}
+.amount_control{
+    justify-content: center;
+    color: #7B7B7B;
+}
+.item_name {
+    margin-left:3%;
+    align-items: center;
+    background-color: white;
+    display: flex;
+    border-radius: 5px;
+    justify-content: left;
+}
+
+.item_name {
+    display: flex;
+    overflow: hidden;
+    height: 80%;
+}
+
+.item_name:focus{
+    border: 1px solid #60AEEA;
+    box-shadow: 4px 4px 8px #C0DEF5;
+    outline: none;
+}
+
+[contenteditable="false"]{
+    text-decoration: line-through;
+    text-align: center;
+}
+
+.first-item, .second-item, .third-item{
+    align-items: center;
+    justify-content: space-between;
+    display: flex;
+    height: 23%;
+    border-bottom: 1.5px solid lightgrey;
+}
+[data-tooltip]{
+    position: relative;
+    display: inline-block;
+}
+[data-tooltip]::before{
+    content: attr(data-tooltip);
+    visibility: hidden;
+    max-width: 100px;
+    background-color: #AF01DA;
+    color: white;
+    text-align: center;
+    font-size: 14px;
+    font-weight: normal;
+    border-radius: 5px;
+    padding: 5px;
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1;
+    transform: translateX(-50%);
+    opacity: 0;
+    transition: all 0.7s ease-in-out;
+    bottom: calc(120%);
+    left: 50%;
+}
+[data-tooltip]:hover::before {
+    visibility: visible;
+    opacity: 1;
+}
+.minus, .plus, .cancel, .count_value, .bought {
+    font-size: 14px;
+    font-weight: bold;
+    height: 36px;
+    width:40px;
+    border-radius: 50%;
+    border: #DB2828;
+    background-color: #DB2828;
+    color: white;
+    margin-left: 2%;
+    box-sizing: border-box;
+}
+.minus{
+    font-size: 23px;
+    box-shadow: 0 4px #BF2728;
+}
+.minus:hover{
+    border: #BF2728;
+    background-color: #BF2728;
+}
+
+.count_value {
+    width: 30px;
+    height: 30px;
+    font-family: Calibri, serif;
+    font-size: 16px;
+    font-weight: bold;
+    background-color: #E8E8E8;
+    border-radius: 10%;
+    color: #7B7B7B;
+}
+.plus{
+    font-size: 23px;
+    background-color: #22BA46;
+    box-shadow: 0 4px #21A340;
+}
+.plus:hover{
+    background-color: #21A340;
+    border: 1px solid #21A340;
+}
+.bought{
+    width: 40%;
+    border-radius: 5px;
+    border: 1px solid #CFCFD0;
+    margin-right: 2%;
+    background-color: #F3F3F3;
+    color: #6F6F6F;
+    box-shadow: 0 4px #CFCFD0;
+}
+.bought:hover{
+    background-color: #CFCFD0;
+    border:#CFCFD0;
+}
+
+.cancel{
+    border-radius: 10%;
+    box-shadow: 0 4px #BF2728;
+}
+.cancel:hover{
+    border: #BF2728;
+    background-color: #BF2728;
+}
+
+.first-item .amount_control .plus{
+    visibility: hidden;
+    position: relative;
+}
+.first-item .amount_control .minus{
+    visibility: hidden;
+    position: relative;
+}
+.first-item .state_indicator .cancel{
+    visibility: hidden;
+    position: absolute;
+}
+.third-item{
+    border: 0;
+}
+.third-item .amount_control .minus{
+    opacity: 0.5;
+}

@@ -1,0 +1,31 @@
+body{
+    background-color: #DADADA;
+    justify-content: space-between;
+    display: flex;
+    font-family: Calibri, serif;
+    flex-wrap: wrap;
+    box-sizing: border-box;
+}
+
+.item_container, .overview_panel {
+    margin-top: 2%;
+    height: 250px;
+    width: 70%;
+    background-color: white;
+    border-radius: 5px;
+    margin-left: 1%;
+    box-shadow: 4px 4px 8px #BFBFBF;
+}
+
+
+
+@media (max-width:500px) {
+    .item_container{
+        width: 100%;
+        order:1;
+    }
+    .overview_panel{
+        width: 100%;
+        order:1;
+    }
+}
