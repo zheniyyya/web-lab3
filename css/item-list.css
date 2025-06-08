@@ -1,3 +1,11 @@
+.item {
+    align-items: center;
+    justify-content: space-between;
+    display: flex;
+    height: 23%;
+    border-bottom: 1.5px solid lightgrey;
+}
+
 .amount_control, .state_indicator, .item_name{
     width: 33%;
     height: 65%;
@@ -5,6 +13,7 @@
     justify-content: right;
     align-items: center;
 }
+
 .state_indicator{
     margin-right: 1%;
 }
@@ -14,67 +23,41 @@
 }
 .item_name {
     margin-left:3%;
-    align-items: center;
     background-color: white;
-    display: flex;
     border-radius: 5px;
     justify-content: left;
-}
-
-.item_name {
-    display: flex;
     overflow: hidden;
     height: 80%;
 }
-
 .item_name:focus{
     border: 1px solid #60AEEA;
     box-shadow: 4px 4px 8px #C0DEF5;
     outline: none;
 }
-
 [contenteditable="false"]{
     text-decoration: line-through;
     text-align: center;
 }
 
-.first-item, .second-item, .third-item{
-    align-items: center;
-    justify-content: space-between;
-    display: flex;
-    height: 23%;
-    border-bottom: 1.5px solid lightgrey;
-}
-[data-tooltip]{
-    position: relative;
-    display: inline-block;
-}
-[data-tooltip]::before{
-    content: attr(data-tooltip);
+
+/* 2-й дочірний елемент */
+section.item:nth-child(2) .amount_control .plus,
+section.item:nth-child(2) .amount_control .minus {
     visibility: hidden;
-    max-width: 100px;
-    background-color: #AF01DA;
-    color: white;
-    text-align: center;
-    font-size: 14px;
-    font-weight: normal;
-    border-radius: 5px;
-    padding: 5px;
-    position: absolute;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    z-index: 1;
-    transform: translateX(-50%);
-    opacity: 0;
-    transition: all 0.7s ease-in-out;
-    bottom: calc(120%);
-    left: 50%;
+    position: relative;
 }
-[data-tooltip]:hover::before {
-    visibility: visible;
-    opacity: 1;
+
+section.item:nth-child(2) .state_indicator .cancel {
+    visibility: hidden;
 }
+
+section.item:nth-child(4) {
+}
+
+section.item:nth-child(4) .amount_control .minus {
+    opacity: 0.5;
+}
+
 .minus, .plus, .cancel, .count_value, .bought {
     font-size: 14px;
     font-weight: bold;
@@ -95,7 +78,6 @@
     border: #BF2728;
     background-color: #BF2728;
 }
-
 .count_value {
     width: 30px;
     height: 30px;
@@ -128,7 +110,6 @@
     background-color: #CFCFD0;
     border:#CFCFD0;
 }
-
 .cancel{
     border-radius: 10%;
     box-shadow: 0 4px #BF2728;
@@ -136,23 +117,4 @@
 .cancel:hover{
     border: #BF2728;
     background-color: #BF2728;
-}
-
-.first-item .amount_control .plus{
-    visibility: hidden;
-    position: relative;
-}
-.first-item .amount_control .minus{
-    visibility: hidden;
-    position: relative;
-}
-.first-item .state_indicator .cancel{
-    visibility: hidden;
-    position: absolute;
-}
-.third-item{
-    border: 0;
-}
-.third-item .amount_control .minus{
-    opacity: 0.5;
 }

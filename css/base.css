@@ -2,6 +2,7 @@ body{
     background-color: #DADADA;
     justify-content: space-between;
     display: flex;
+    flex-direction: row;
     font-family: Calibri, serif;
     flex-wrap: wrap;
     box-sizing: border-box;
@@ -9,7 +10,7 @@ body{
 
 .item_container, .overview_panel {
     margin-top: 2%;
-    height: 250px;
+    height: fit-content;
     width: 70%;
     background-color: white;
     border-radius: 5px;
