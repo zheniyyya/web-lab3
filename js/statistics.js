@@ -10,14 +10,11 @@ function updateStatistics() {
     items.forEach(item => {
         const name = item.querySelector('.item_name p')?.textContent.trim();
         const count = parseInt(item.querySelector('.count_value')?.textContent.trim());
-        const isBought = item.querySelector('.bought').textContent.trim() === "Не куплено";
+        const isBought = item.querySelector('.item_name').classList.contains('noneditable');
 
         const span = document.createElement('span');
         span.className = 'display_item';
-        span.innerHTML = `
-            ${name}
-            <span class="amount">${count}</span>
-        `;
+        span.innerHTML = `${name}<span class="amount">${count}</span>`;
 
         if (isBought) {
             acquiredItemsContainer.appendChild(span);
@@ -25,4 +22,6 @@ function updateStatistics() {
             availableItemsContainer.appendChild(span);
         }
     });
+    saveState();
+
 }

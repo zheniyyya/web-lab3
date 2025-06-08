@@ -45,6 +45,8 @@ document.addEventListener("DOMContentLoaded", () => {
             nameContainer.innerHTML = "";
             nameContainer.appendChild(newP);
             updateStatistics();
+            saveState();
+
         });
 
         input.addEventListener("keydown", (e) => {
