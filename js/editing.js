@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", () => {
-    // Додаємо CSS-стилі динамічно
+
     const style = document.createElement("style");
     style.textContent = `
         .edit_input {
@@ -19,42 +19,39 @@ document.addEventListener("DOMContentLoaded", () => {
     `;
     document.head.appendChild(style);
 
-    const items = document.querySelectorAll(".item");
+    document.querySelector('.item_container').addEventListener('click', (e) => {
+        const nameContainer = e.target.closest(".item_name");
 
-    items.forEach(item => {
-        const nameContainer = item.querySelector(".item_name");
+        if (!nameContainer || nameContainer.classList.contains("noneditable")) return;
+
         const nameParagraph = nameContainer.querySelector("p");
+        const currentName = nameParagraph.textContent.trim();
 
-        nameContainer.addEventListener("click", () => {
-            if (nameContainer.getAttribute("contenteditable") === "false") return;
+        const input = document.createElement("input");
+        input.type = "text";
+        input.value = currentName;
+        input.className = "edit_input";
 
-            const currentName = nameParagraph.textContent.trim();
+        nameContainer.innerHTML = "";
+        nameContainer.appendChild(input);
+        input.focus();
 
-            const input = document.createElement("input");
-            input.type = "text";
-            input.value = currentName;
-            input.className = "edit_input";
+        input.addEventListener("blur", () => {
+            const newName = input.value.trim() || currentName;
+
+            const newP = document.createElement("p");
+            newP.textContent = newName;
 
             nameContainer.innerHTML = "";
-            nameContainer.appendChild(input);
-            input.focus();
+            nameContainer.appendChild(newP);
+            updateStatistics();
+        });
 
-            input.addEventListener("blur", () => {
-                const newName = input.value.trim() || currentName;
-
-                const newP = document.createElement("p");
-                newP.textContent = newName;
-
-                nameContainer.innerHTML = "";
-                nameContainer.appendChild(newP);
-            });
-
-            input.addEventListener("keydown", (e) => {
-                if (e.key === "Enter") {
-                    e.preventDefault();
-                    input.blur();
-                }
-            });
+        input.addEventListener("keydown", (e) => {
+            if (e.key === "Enter") {
+                e.preventDefault();
+                input.blur();
+            }
         });
     });
 });
