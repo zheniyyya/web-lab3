@@ -10,6 +10,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 if (itemToRemove) {
                     itemToRemove.remove();
                     updateStatistics();
+                    saveState();
+
                 }
             }
         });

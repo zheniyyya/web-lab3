@@ -46,6 +46,8 @@ document.addEventListener("DOMContentLoaded", () => {
                 cancelBtn.style.visibility = "visible";
                 button.textContent = "Куплено";
                 updateStatistics();
+                saveState();
+
             }
         }
     });

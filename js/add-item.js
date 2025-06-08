@@ -33,4 +33,6 @@ addItemForm.addEventListener('submit', function(event) {
     itemInput.focus();
 
     updateStatistics();
+    saveState();
+
 });
