@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", () => {
-    // Додати CSS-стилі динамічно
+    // Додаємо CSS-стилі динамічно
     const style = document.createElement("style");
     style.textContent = `
         .edit_input {
