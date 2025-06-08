@@ -38,12 +38,14 @@ document.addEventListener("DOMContentLoaded", () => {
                 minusBtn.style.visibility = "hidden";
                 cancelBtn.style.visibility = "hidden";
                 button.textContent = "Не куплено";
+                updateStatistics();
             } else {
                 nameBlock.classList.remove("noneditable");
                 plusBtn.style.visibility = "visible";
                 minusBtn.style.visibility = "visible";
                 cancelBtn.style.visibility = "visible";
                 button.textContent = "Куплено";
+                updateStatistics();
             }
         }
     });

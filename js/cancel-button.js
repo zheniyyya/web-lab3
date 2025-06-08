@@ -9,6 +9,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 const itemToRemove = event.target.closest('.item');
                 if (itemToRemove) {
                     itemToRemove.remove();
+                    updateStatistics();
                 }
             }
         });

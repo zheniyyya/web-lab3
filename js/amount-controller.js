@@ -22,6 +22,8 @@ document.addEventListener("DOMContentLoaded", () => {
         }
 
         countValue.textContent = count;
+        updateStatistics();
+
 
         const minusBtn = item.querySelector('.minus');
         if (count === 1) {
