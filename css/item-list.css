@@ -34,7 +34,7 @@
     box-shadow: 4px 4px 8px #C0DEF5;
     outline: none;
 }
-[contenteditable="false"]{
+.noneditable {
     text-decoration: line-through;
     text-align: center;
 }
