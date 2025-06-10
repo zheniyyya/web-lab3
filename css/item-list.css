@@ -118,3 +118,34 @@ section.item:nth-child(4) .amount_control .minus {
     border: #BF2728;
     background-color: #BF2728;
 }
+
+[data-tooltip]{
+    position: relative;
+    display: inline-block;
+}
+[data-tooltip]::before{
+    content: attr(data-tooltip);
+    visibility: hidden;
+    max-width: 100px;
+    background-color: #AF01DA;
+    color: white;
+    text-align: center;
+    font-size: 14px;
+    font-weight: normal;
+    border-radius: 5px;
+    padding: 5px;
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1;
+    transform: translateX(-50%);
+    opacity: 0;
+    transition: all 0.7s ease-in-out;
+    bottom: calc(120%);
+    left: 50%;
+}
+[data-tooltip]:hover::before {
+    visibility: visible;
+    opacity: 1;
+}
