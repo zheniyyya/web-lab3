@@ -1,3 +1,4 @@
+
 const addItemForm = document.querySelector('.add_item_form');
 const itemInput = document.querySelector('.add_item_form .input');
 const itemsContainer = document.querySelector('.item_container');
@@ -34,5 +35,4 @@ addItemForm.addEventListener('submit', function(event) {
 
     updateStatistics();
     saveState();
-
 });

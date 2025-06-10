@@ -23,10 +23,9 @@
 
 
     <section class="item">
-        <div class="item_name">
-            <p>
-                Помідори
-            </p>
+        <div class="item_name noneditable"> <p>
+            Помідори
+        </p>
         </div>
         <div class="amount_control">
             <button class="minus" data-tooltip="Зменшити">-</button>
@@ -34,8 +33,7 @@
             <button class="plus" data-tooltip="Збільшити">+</button>
         </div>
         <div class="state_indicator">
-            <button class="bought" >Не куплено </button>
-            <button class="cancel" data-tooltip="Видалити">x</button>
+            <button class="bought" >Не куплено </button> <button class="cancel" data-tooltip="Видалити">x</button>
         </div>
     </section>
 
@@ -113,14 +111,13 @@
 <script src="js/editing.js" defer></script>
 <script src = "js/amount-controller.js" defer></script>
 <script src = "js/statistics.js" defer></script>
-<script src="js/storage.js"></script>
+<script src="js/storage.js" defer></script>
 
 <script>
     document.addEventListener('DOMContentLoaded', () => {
-        loadItems();
-        renderItems();
+        loadState();
     });
-</script>
+    </script>
 
 </body>
 </html>

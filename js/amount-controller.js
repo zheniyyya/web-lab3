@@ -1,3 +1,18 @@
+
+function initializeMinusButton(item) {
+    const countValue = item.querySelector('.count_value');
+    const minusBtn = item.querySelector('.minus');
+    const count = parseInt(countValue.textContent);
+
+    if (count === 1) {
+        minusBtn.style.opacity = "0.5";
+        minusBtn.disabled = true;
+    } else {
+        minusBtn.style.opacity = "1";
+        minusBtn.disabled = false;
+    }
+}
+
 document.addEventListener("DOMContentLoaded", () => {
     const itemContainer = document.querySelector('.item_container');
 
@@ -22,32 +37,10 @@ document.addEventListener("DOMContentLoaded", () => {
         }
 
         countValue.textContent = count;
+        initializeMinusButton(item);
         updateStatistics();
-
-
-        const minusBtn = item.querySelector('.minus');
-        if (count === 1) {
-            minusBtn.style.opacity = "0.5";
-            minusBtn.disabled = true;
-        } else {
-            minusBtn.style.opacity = "1";
-            minusBtn.disabled = false;
-        }
     });
 
-    // при завантаженні оновлюємо усі "-" кнопки
     const allItems = document.querySelectorAll('.item');
-    allItems.forEach(item => {
-        const countValue = item.querySelector('.count_value');
-        const minusBtn = item.querySelector('.minus');
-        const count = parseInt(countValue.textContent);
-
-        if (count === 1) {
-            minusBtn.style.opacity = "0.5";
-            minusBtn.disabled = true;
-        } else {
-            minusBtn.style.opacity = "1";
-            minusBtn.disabled = false;
-        }
-    });
+    allItems.forEach(initializeMinusButton);
 });
